@@ -1,8 +1,5 @@
   @extends('admin.layout.master')
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-  
+@section('main-content')
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -68,17 +65,8 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-  </section>
+    </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
- 
-<!-- ./wrapper -->
-
-<script src="assets/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="assets/admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="assets/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<script src="assets/admin/dist/js/app.min.js"></script>
-<script src="assets/admin/dist/js/demo.js"></script>
+@endsection
