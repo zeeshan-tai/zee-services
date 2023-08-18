@@ -36,7 +36,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{)}}"><i class="fa fa-circle-o"></i> Create Services </a></li>
+                    <li class=""><a href="{{}}"><i class="fa fa-circle-o"></i> Create Services </a></li>
                     <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Services </a></li>
                 </ul>
             </li>
