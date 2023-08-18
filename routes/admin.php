@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Admin\DashboardController@index')->name('dashboard');
 Route::resource('home', 'Admin\HomeController');
 Route::get('about', 'Admin\AboutController@index')->name('about');
-Route::resource('services', 'Admin\ServiceController');
+Route::resource('service', 'Admin\ServiceController');
 Route::resource('project', 'Admin\ProjectController');
 Route::resource('testimonials','Admin\TestimonialsController');
 Route::resource('team','Admin\TeamController');
