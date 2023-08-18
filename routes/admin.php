@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'Admin\DashboardController@index')->name('dashboard');
+Route::get('/home', 'Admin\HomeController@index')->name('home');
+Route::get('/about', 'Admin\AboutController@index')->name('about');
+Route::get('/services', 'Admin\ServiceController@index')->name('service');
+Route::get('/project', 'Admin\ProjectController@index')->name('project');
+Route::get('/testimonials','Admin\TestimonialsController@index')->name('testimonials');
+Route::get('/team','Admin\TeamController@index')->name('team');
+Route::get('/contact', 'Admin\ContactController@index')->name('contact');

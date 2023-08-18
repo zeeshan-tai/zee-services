@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -13,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.service.index');
     }
 
     /**
@@ -21,9 +22,9 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        return view('admin.service.add');
     }
 
     /**
@@ -32,10 +33,6 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -45,7 +42,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.service.show');
     }
 
     /**
@@ -56,7 +53,7 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.service.edit');
     }
 
     /**

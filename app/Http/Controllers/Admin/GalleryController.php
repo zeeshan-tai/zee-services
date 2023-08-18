@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.gallery.index');
     }
 
     /**
@@ -21,21 +21,11 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        return view('admin.gallery.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -45,7 +35,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.gallery.show');
     }
 
     /**
@@ -56,7 +46,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.gallery.edit');
     }
 
     /**

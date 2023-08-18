@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class Project-CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.project-category.index');
     }
 
     /**
@@ -21,9 +22,9 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        return view('admin.project-category.add');
     }
 
     /**
@@ -32,10 +33,6 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -45,7 +42,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.project-category.show');
     }
 
     /**
@@ -56,7 +53,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.project-category.edit');
     }
 
     /**

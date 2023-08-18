@@ -8,11 +8,12 @@ class NewslatterController extends Controller
 {
     public function index()
     {
-    	# code...
+        return view('admin.newsletter.index');
+    }
+    
+    public function show()
+    {
+        return view('admin.newsletter.show');
     }
 }
 
-public function show()
-{
-	# code...
-}
