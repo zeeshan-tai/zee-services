@@ -24,68 +24,92 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Create Category </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Category </a></li>
+                    <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Create User </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View User </a></li>
                 </ul>
             </li>
             <li class=" treeview">
                 <a href="#">
-                    <i class="fa fa-tasks"></i> <span>Category</span>
+                    <i class="fa fa-tasks"></i> <span>Services</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Category </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Category </a></li>
+                    <li class=""><a href="{{)}}"><i class="fa fa-circle-o"></i> Create Services </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Services </a></li>
                 </ul>
             </li>
             <li class=" treeview">
                 <a href="#">
-                    <i class="fa fa-pencil"></i> <span>Author</span>
+                    <i class="fa fa-pencil"></i> <span>Team</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Author </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Author </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Team </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Team </a></li>
                 </ul>
             </li>
             <li class=" treeview">
                 <a href="#">
-                    <i class="fa fa-book"></i> <span>Book</span>
+                    <i class="fa fa-book"></i> <span>Project</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Book </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Book </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Project </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Project </a></li>
                 </ul>
             </li>
             <li class=" treeview">
                 <a href="#">
-                    <i class="fa fa-film"></i> <span>Media</span>
+                    <i class="fa fa-film"></i> <span>Testimonials</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Media </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Media </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Testimonials </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Testimonials </a></li>
                 </ul>
             </li>
             <li class=" treeview">
                 <a href="#">
-                    <i class="fa fa-user-plus"></i> <span>Webmaster</span>
+                    <i class="fa fa-user-plus"></i> <span>project Category</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Webmaster </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Webmaster </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create project Category </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View project Category </a></li>
+                </ul>
+            </li>
+            <li class=" treeview">
+                <a href="#">
+                    <i class="fa fa-user-plus"></i> <span>Gallery</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create Gallery </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Gallery </a></li>
+                </ul>
+            </li>
+            <li class=" treeview">
+                <a href="#">
+                    <i class="fa fa-user-plus"></i> <span>news Letter</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> Create new Letter </a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View new Letter </a></li>
                 </ul>
             </li>
         </ul>
