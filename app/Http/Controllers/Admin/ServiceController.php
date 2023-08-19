@@ -14,7 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('admin.service.index');
+        return view('admin.services.index');
     }
 
     /**
@@ -22,9 +22,9 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
-        return view('admin.service.add');
+        return view('admin.services.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        return view('admin.service.show');
+        return view('admin.services.show');
     }
 
     /**
@@ -53,7 +53,7 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.service.edit');
+        return view('admin.services.edit');
     }
 
     /**

@@ -36,8 +36,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{}}"><i class="fa fa-circle-o"></i> Create Services </a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> View Services </a></li>
+                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create Services </a></li>
+                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View Services </a></li>
                 </ul>
             </li>
             <li class=" treeview">
