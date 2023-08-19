@@ -15,8 +15,8 @@ class CreateProjectCategoryTable extends Migration
     {
         Schema::create('projectcategory', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('slug', 100);
+            $table->string('name', 100)->nullable();
+            $table->string('slug', 100)->nullable();
             $table->string('status', 10)->default('deactive');
             $table->timestamps();
         });

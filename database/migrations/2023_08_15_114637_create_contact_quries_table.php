@@ -15,10 +15,10 @@ class CreateContactQuriesTable extends Migration
     {
         Schema::create('contactquries', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname', 100);
+            $table->string('fullname', 100)->nullable();
             $table->string('email', 100)->unique();
-            $table->string('subject', 100);
-            $table->text('message', 100);
+            $table->string('subject', 100)->nullable();
+            $table->text('message', 100)->nullable();
             $table->timestamps();
         });
     }
