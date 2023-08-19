@@ -16,7 +16,7 @@ class ServiceController extends Controller
     {
         return view('admin.services.index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
