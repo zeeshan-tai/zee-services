@@ -28,3 +28,4 @@ Route::resource('team','Admin\TeamController');
 Route::get('contact', 'Admin\ContactQueriesController@index')->name('contact');
 Route::resource('project-category','Admin\ProjectCategoryController');
 Route::resource('gallery','Admin\GalleryController');
+Route::get('newsletter','Admin\NewsletterController@index')->name('newsletter');

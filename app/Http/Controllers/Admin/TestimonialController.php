@@ -14,7 +14,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('admin.testimonial.index');
+        return view('admin.testimonials.index');
     }
 
     /**
@@ -24,7 +24,11 @@ class TestimonialController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
+        return view('admin.testimonials.create');
+=======
         return view('admin.testimonial.create');
+>>>>>>> 9509213cec7cb066284402d9c04d0218a58282a6
     }
 
     /**
