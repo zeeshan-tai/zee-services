@@ -37,9 +37,10 @@
                             <thead style="background-color: #F8F8F8;">
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
-                                    <th width="20%">Title</th>
-                                    <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="17%">Title</th>
+                                    <th width="17%">Short Description</th>
+                                    <th width="17%">Image</th>
+                                    <th width="17%">Work Done</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
@@ -49,6 +50,7 @@
                                 <td>Title</td>
                                 <td>Designation</td>
                                 <td>Image</td>
+                                <td>Work Done</td>
                                 <td>
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>

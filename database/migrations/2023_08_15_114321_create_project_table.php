@@ -18,7 +18,7 @@ class CreateProjectTable extends Migration
             $table->string('title', 100)->nullable();
             $table->string('image', 100)->nullable();
             $table->text('description', 100)->nullable();
-            $table->string('project-category-id')->nullable();
+            $table->string('project_category_id')->nullable();
             $table->string('status', 10)->default('deactive');
             $table->timestamps();
         });
