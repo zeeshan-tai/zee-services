@@ -14,7 +14,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('admin.testimonial.index');
+        return view('admin.testimonials.index');
     }
 
     /**
@@ -22,9 +22,9 @@ class TestimonialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
-        return view('admin.testimonial.add');
+        return view('admin.testimonials.create');
     }
 
     /**

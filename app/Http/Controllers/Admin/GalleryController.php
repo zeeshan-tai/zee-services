@@ -22,9 +22,9 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
-        return view('admin.gallery.add');
+        return view('admin.gallery.create');
     }
 
 

@@ -60,8 +60,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create Project </a></li>
-                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View Project </a></li>
+                    <li class=""><a href="{{ route('project.create') }}"><i class="fa fa-circle-o"></i> Create Project </a></li>
+                    <li class=""><a href="{{ route('project.index') }}"><i class="fa fa-circle-o"></i> View Project </a></li>
                 </ul>
             </li>
             <li class=" treeview">
@@ -72,8 +72,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create Testimonials </a></li>
-                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View Testimonials </a></li>
+                    <li class=""><a href="{{ route('testimonials.create') }}"><i class="fa fa-circle-o"></i> Create Testimonials </a></li>
+                    <li class=""><a href="{{ route('testimonials.index') }}"><i class="fa fa-circle-o"></i> View Testimonials </a></li>
                 </ul>
             </li>
             <li class=" treeview">
@@ -96,8 +96,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create Gallery </a></li>
-                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View Gallery </a></li>
+                    <li class=""><a href="{{ route('gallery.create') }}"><i class="fa fa-circle-o"></i> Create Gallery </a></li>
+                    <li class=""><a href="{{ route('gallery.index') }}"><i class="fa fa-circle-o"></i> View Gallery </a></li>
                 </ul>
             </li>
             <li class=" treeview">
@@ -108,8 +108,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create new Letter </a></li>
-                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View new Letter </a></li>
+                    {{-- <li class=""><a href="{{ route('newsletter.create') }}"><i class="fa fa-circle-o"></i> Create new Letter </a></li> --}}
+                    <li class=""><a href="{{ route('newsletter') }}"><i class="fa fa-circle-o"></i> View new Letter </a></li>
                 </ul>
             </li>
         </ul>
