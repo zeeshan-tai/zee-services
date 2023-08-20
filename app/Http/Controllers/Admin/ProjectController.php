@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.project.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.project.create');
     }
 
     /**
@@ -33,10 +33,6 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -46,7 +42,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.project.show');
     }
 
     /**
@@ -57,7 +53,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.project.edit');
     }
 
     /**
