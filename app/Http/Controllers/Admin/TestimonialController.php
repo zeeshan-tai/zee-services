@@ -22,9 +22,9 @@ class TestimonialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
-        return view('admin.testimonial.add');
+        return view('admin.testimonial.create');
     }
 
     /**
