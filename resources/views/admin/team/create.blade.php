@@ -17,54 +17,30 @@
       <!-- form start -->
       <div class="box box-primary">
         <!-- /.box-header -->
+      <form action="{{route('team.store')}}" method="post">
         <div class="box-body">
           <!-- row start -->
           <div class="row">
                 <div class="col-xs-6">
                   <div class="form-group">
-                    <label for="title">Title <span class="text text-red">*</span></label>
-                      <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                    <label for="fullname">Fullname <span class="text text-red">*</span></label>
+                      <input type="text" name="fullname" class="form-control" id="fullname" placeholder="fullname">
                     </div>
 
                     <div class="form-group">
-                    <label for="slug">Slug <span class="text text-red">*</span></label>
-                      <input type="text" name="slug" class="form-control" id="slug" placeholder="Slug">
+                    <label for="designation">Designation <span class="text text-red">*</span></label>
+                      <input type="text" name="designation" class="form-control" id="designation" placeholder="designation">
                     </div>
                     <div class="form-group">
-                      <label for="designation">Designation <span class="text text-red">*</span></label>
-                      <input type="text" name="designation" class="form-control" id="designation" placeholder="Designation">
+                      <label for="status">Status <span class="text text-red">*</span></label>
+                      <input type="text" name="status" class="form-control" id="status" placeholder="status">
                     </div>
-                    <div class="form-group">
-                  <label for="dob">Date of birth: <span class="text text-red">*</span></label>
-                  <input type="date" name="dob" class="form-control" id="dob" placeholder="Date of Birth">
-                 </div>
-
-                    <div class="form-group">
-                      <label for="email">Email <span class="text text-red">*</span></label>
-                      <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                      <label>Country <span class="text text-red">*</span></label>
-                      <select name="country" id="country" class="form-control select2" style="width: 100%;">
-                        <option value="none">-- Select Country --</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="phone">Phone</label>
-                      <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
-                    </div>
-
-                    <div class="form-group">
-                    <label>Description</label>
-                    <textarea name="description" id="description" class="form-control" rows="5" placeholder="Enter ..."></textarea>
-                  </div>
                 </div>
 
                 <div class="col-xs-6">
                    <div class="form-group">
-                      <label for="author_img">Author Image <span class="text text-red">*</span></label>
-                      <input type="file" name="author_img" class="form-control" id="author_img">
+                      <label for="image">Image <span class="text text-red">*</span></label>
+                      <input type="file" name="image" class="form-control" id="image">
                     </div>
                   <div class="form-group">
                       <label for="facebook_id">Facebook ID</label>
@@ -77,20 +53,13 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="youtube_id">YouTube ID</label>
-                      <input type="text" name="youtube_id" class="form-control" id="youtube_id" placeholder="YouTube ID">
+                      <label for="instagram_id">Instagram ID</label>
+                      <input type="text" name="instagram_id" class="form-control" id="instagram_id" placeholder="YouTube ID">
                     </div>
                     <div class="form-group">
-                      <label for="pinterest_id">Pinterest ID</label>
-                      <input type="text" name="pinterest_id" class="form-control" id="pinterest_id" placeholder="Pinterest ID">
+                      <label for="linkedin_id">Linkedin ID</label>
+                      <input type="text" name="linkedin_id" class="form-control" id="linkedin_id" placeholder="linkedin ID">
                     </div>
-                    <div class="form-group">
-                    <label>Author Feature</label>
-                    <select name="author_feature" id="author_feature" class="form-control select2" style="width: 100%;">
-                      <option value="no">NO</option>
-                      <option value="yes">Yes</option>
-                    </select>
-                </div>
                 </div>
             </div>
 
@@ -102,6 +71,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-danger">Cancel</button>
           </div>
+      </form>
       </div>
       <!-- /.box -->
 

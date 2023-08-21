@@ -48,7 +48,7 @@
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
                                 <td>Title</td>
-                                <td>Designation</td>
+                                <td>Short Description</td>
                                 <td>Image</td>
                                 <td>Work Done</td>
                                 <td>

@@ -37,16 +37,16 @@
                             <thead style="background-color: #F8F8F8;">
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
-                                    <th width="20%">Title</th>
+                                    <th width="20%">Full Name</th>
                                     <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="20%">Image</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
-                                <td>Title</td>
+                                <td>Full Name</td>
                                 <td>Designation</td>
                                 <td>Image</td>
                                 <td>

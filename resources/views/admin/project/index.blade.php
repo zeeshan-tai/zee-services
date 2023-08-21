@@ -38,8 +38,8 @@
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
                                     <th width="20%">Title</th>
-                                    <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="20%">Project Category Id</th>
+                                    <th width="20%">Image</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
@@ -47,7 +47,7 @@
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
                                 <td>Title</td>
-                                <td>Designation</td>
+                                <td>Project Category Id</td>
                                 <td>Image</td>
                                 <td>
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
