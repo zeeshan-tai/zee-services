@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Project;
 
 class ProjectController extends Controller
 {
@@ -14,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.project.index');
+        return view('admin.projects.index');
     }
 
     /**
@@ -35,8 +36,30 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+      $this->validation(request(),[
+        'title' => 'required',
+        'slug' => 'required',
+        'project_category_id' => 'required',
+        'status' => 'required',
+        'image' => 'required|mimes:png,jpg, jpeg,gif|max:2048',
+        'description' => 'required'
+      ]);
+
+      project::create([
+        'title' => request()->get('title'),
+        'slug' =>request()->get('slug'),
+        'project_category_id' =>request()->get('project_category_id'),
+        'status' => 1,
+        'image' => (''),
+        'description'=>request()->get('description'),]);
+
+
+        return redirect()->to('/admin/projects');
+
+
+
+
+      }
 
     /**
      * Display the specified resource.
