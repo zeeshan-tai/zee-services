@@ -84,8 +84,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{ route('service.create') }}"><i class="fa fa-circle-o"></i> Create project Category </a></li>
-                    <li class=""><a href="{{ route('service.index') }}"><i class="fa fa-circle-o"></i> View project Category </a></li>
+                    <li class=""><a href="{{ route('project_category.create') }}"><i class="fa fa-circle-o"></i> Create project Category </a></li>
+                    <li class=""><a href="{{ route('project_category.index') }}"><i class="fa fa-circle-o"></i> View project Category </a></li>
                 </ul>
             </li>
             <li class=" treeview">

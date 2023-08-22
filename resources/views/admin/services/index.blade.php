@@ -45,21 +45,30 @@
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
+                            @foreach($services as $service)
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
-                                <td>Title</td>
-                                <td>Short Description</td>
-                                <td>Image</td>
-                                <td>Work Done</td>
+                                <td>{{$service->title}}</td>
+                                <td>{{$service->short_description}}</td>
+                                <td><img src="{{asset('uploads/').'/'.$service->image}}" alt="" height='100' weight='100'></td>
+                                <td>{{$service->work_done}}</td>
                                 <td>
+                                    @if($service->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
+                                    @else
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
-                                    <button class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                    <a href="{{route('service.edit', $service->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <form action="{{route('service.destroy', $service->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     <!-- /.box-body -->

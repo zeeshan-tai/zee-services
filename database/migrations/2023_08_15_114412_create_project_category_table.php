@@ -13,11 +13,11 @@ class CreateProjectCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('projectcategory', function (Blueprint $table) {
+        Schema::create('project_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->nullable();
             $table->string('slug', 100)->nullable();
-            $table->string('status', 10)->default('deactive');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateProjectCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projectcategory');
+        Schema::dropIfExists('project_categories');
     }
 }

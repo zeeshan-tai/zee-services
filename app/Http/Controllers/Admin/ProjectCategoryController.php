@@ -22,9 +22,9 @@ class ProjectCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add()
+    public function create()
     {
-        return view('admin.project-category.add');
+        return view('admin.project-category.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProjectCategoryController extends Controller
      */
     public function show($id)
     {
-        return view('admin.project-category.show');
+        return view('admin.project_category.show');
     }
 
     /**
@@ -53,7 +53,7 @@ class ProjectCategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.project-category.edit');
+        return view('admin.project_category.edit');
     }
 
     /**

@@ -13,7 +13,7 @@ class CreateContactQuriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contactquries', function (Blueprint $table) {
+        Schema::create('contact_quries', function (Blueprint $table) {
             $table->id();
             $table->string('fullname', 100)->nullable();
             $table->string('email', 100)->unique();
@@ -30,6 +30,6 @@ class CreateContactQuriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contactquries');
+        Schema::dropIfExists('contact_quries');
     }
 }

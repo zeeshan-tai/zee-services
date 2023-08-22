@@ -17,7 +17,8 @@
       <!-- form start -->
       <div class="box box-primary">
         <!-- /.box-header -->
-        <form action="{{route('service.store')}}" method="post">
+        <form action="{{route('service.store')}}" method="post" enctype="multipart/form-data">
+          @csrf
         <div class="box-body">
           <!-- row start -->
             <div class="row">

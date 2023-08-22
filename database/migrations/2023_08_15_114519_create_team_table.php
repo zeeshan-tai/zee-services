@@ -13,7 +13,7 @@ class CreateTeamTable extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('fullname', 100)->nullable();
             $table->string('designation', 100)->nullable();
@@ -22,7 +22,7 @@ class CreateTeamTable extends Migration
             $table->string('instagram_id', 100)->unique();
             $table->string('linkedin_id', 100)->unique();
             $table->string('team_img', 100)->nullable();
-            $table->string('status', 10)->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateTeamTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('teams');
     }
 }

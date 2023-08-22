@@ -13,13 +13,13 @@ class CreateProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('project', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100)->nullable();
             $table->string('image', 100)->nullable();
             $table->text('description', 100)->nullable();
             $table->string('project_category_id')->nullable();
-            $table->string('status', 10)->default('deactive');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project');
+        Schema::dropIfExists('projects');
     }
 }

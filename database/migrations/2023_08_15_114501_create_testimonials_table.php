@@ -19,7 +19,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('designation', 100)->nullable();
             $table->string('image', 100)->nullable();
             $table->text('description')->nullable();
-            $table->string('status', 10)->default('deactive');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

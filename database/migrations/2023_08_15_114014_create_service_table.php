@@ -13,13 +13,14 @@ class CreateServiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('service', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100)->nullable();
+            $table->string('slug', 100)->nullable();
             $table->text('short_description', 50)->nullable();
             $table->text('description', 100)->nullable();
             $table->string('image', 100)->nullable();
-            $table->string('status', 100)->nullable();
+            $table->boolean('status')->default(0);
             $table->string('work_done', 100)->nullable();
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ class CreateServiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service');
+        Schema::dropIfExists('services');
     }
 }
