@@ -55,10 +55,6 @@ class ProjectController extends Controller
 
 
         return redirect()->to('/admin/projects');
-
-
-
-
       }
 
     /**
