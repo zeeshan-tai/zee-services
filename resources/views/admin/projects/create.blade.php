@@ -17,6 +17,8 @@
       <!-- form start -->
       <div class="box box-primary">
         <!-- /.box-header -->
+        <form action="{{route('project.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
         <div class="box-body">
           <!-- row start -->
           <div class="row">
@@ -43,7 +45,7 @@
                       <label for="image">Image <span class="text text-red">*</span></label>
                       <input type="file" name="image" class="form-control" id="image">
                     </div>
-                  
+
                     <div class="form-group">
                      <label>Description</label>
                      <textarea name="description" id="description" class="form-control" rows="5" placeholder="Enter ..."></textarea>
@@ -59,6 +61,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-danger">Cancel</button>
           </div>
+        </form>
       </div>
       <!-- /.box -->
 

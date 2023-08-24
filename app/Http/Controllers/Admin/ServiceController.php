@@ -18,9 +18,9 @@ class ServiceController extends Controller
 
         $services = Service::latest()->paginate(15);
         return view('admin.services.index')
-            ->with(compact('services'));  
+            ->with(compact('services'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +44,7 @@ class ServiceController extends Controller
         ]);
 
         $fileName = null;
-        if (request()->hasFile('image')) 
+        if (request()->hasFile('image'))
         {
             $file = request()->file('image');
             $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
@@ -53,7 +53,7 @@ class ServiceController extends Controller
 
         Service::create([
         'title' => request()->get('title'),
-        'slug' => request()->get('slug'), 
+        'slug' => request()->get('slug'),
         'status' => 1,
         'work_done' => request()->get('work_done'),
         'image' => $fileName,
@@ -94,7 +94,7 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service=Service::find($id);   
+        $service=Service::find($id);
         return view('admin.services.edit',compact('service'));
     }
 
@@ -118,16 +118,16 @@ class ServiceController extends Controller
         ]);
         $service=Service::find($id);
         $fileName = null;
-        if (request()->hasFile('image')) 
+        if (request()->hasFile('image'))
         {
             $file = request()->file('image');
             $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
             $file->move('./uploads/', $fileName);
         }
-        
+
         $service->update([
         'title' => request()->get('title'),
-        'slug' => request()->get('slug'), 
+        'slug' => request()->get('slug'),
         'status' => 1,
         'work_done' => request()->get('work_done'),
         'image' => $fileName,
@@ -138,7 +138,7 @@ class ServiceController extends Controller
             'message' => 'Record Inserted Successfully!',
             'alert-type' => 'success',
         ];
-   
+
         return redirect()->to('/admin/service')->with($notification);
     }
 
