@@ -17,7 +17,8 @@
       <!-- form start -->
       <div class="box box-primary">
         <!-- /.box-header -->
-      <form action="{{route('team.store')}}" method="post">
+      <form action="{{route('team.store')}}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="box-body">
           <!-- row start -->
           <div class="row">
@@ -40,7 +41,7 @@
                 <div class="col-xs-6">
                    <div class="form-group">
                       <label for="image">Image <span class="text text-red">*</span></label>
-                      <input type="file" name="image" class="form-control" id="image">
+                      <input type="file" name="team_img" class="form-control" id="team_img">
                     </div>
                   <div class="form-group">
                       <label for="facebook_id">Facebook ID</label>

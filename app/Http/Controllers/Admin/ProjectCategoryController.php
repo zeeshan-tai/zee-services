@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\ProjectCategory;
 
 class ProjectCategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.project-category.index');
+        $project_catetories = ProjectCategory::latest()->paginate(15);
+        return view('admin.project_categories.index')
+            ->with(compact('project_categories'));  
     }
 
     /**
@@ -24,7 +27,7 @@ class ProjectCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.project-category.create');
+        return view('admin.project_categories.create');
     }
 
     /**
@@ -34,6 +37,28 @@ class ProjectCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+    public function store(Request $request)
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'slug' => 'required',
+            'status' => 'required',
+        ]);
+
+        Projectcategory::create([
+        'name' => request()->get('name'),
+        'slug' => request()->get('slug'), 
+        'status' => 1,
+        ]);
+        $notification = [
+            'message' => 'Record Inserted Successfully!',
+            'alert-type' => 'success',
+        ];
+
+        return redirect()->to('/admin/project_category')->with($notification);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -42,7 +67,7 @@ class ProjectCategoryController extends Controller
      */
     public function show($id)
     {
-        return view('admin.project_category.show');
+        return view('admin.project_categories.show');
     }
 
     /**
@@ -53,7 +78,8 @@ class ProjectCategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.project_category.edit');
+        $project_category=Project_category::find($id);   
+        return view('admin.project_categories.edit',compact('project_category'));
     }
 
     /**
@@ -65,7 +91,24 @@ class ProjectCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required',
+            'slug' => 'required',
+            'status' => 'required',
+        ]);
+        $projct_category=Projct_category::find($id);
+        
+        $service->update([
+        'name' => request()->get('name'),
+        'slug' => request()->get('slug'), 
+        'status' => 1,
+        ]);
+        $notification = [
+            'message' => 'Record Inserted Successfully!',
+            'alert-type' => 'success',
+        ];
+   
+        return redirect()->to('/admin/project_category')->with($notification);
     }
 
     /**
@@ -76,6 +119,9 @@ class ProjectCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project_category=Project_category::find($id);
+
+        $project_category->delete();
+        return redirect()->to('/admin/project_category');
     }
 }

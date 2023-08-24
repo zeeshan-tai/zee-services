@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TestimonialsController extends Controller
+class TestimonialController extends Controller
 {
     public function index()
     {
-        $page_title = "Testimonials";
-        return view('front.testimonials', compact('page_title'));
+        $page_title = "Testimonial";
+        return view('front.testimonial', compact('page_title'));
     }
 }

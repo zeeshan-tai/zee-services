@@ -65,7 +65,6 @@ class ServiceController extends Controller
             'alert-type' => 'success',
         ];
 
-        
         return redirect()->to('/admin/service')->with($notification);
     }
 
@@ -113,7 +112,7 @@ class ServiceController extends Controller
             'slug' => 'required',
             'work_done' => 'required',
             'status' => 'required',
-            // 'image' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
+            'image' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
             'short_description' => 'required',
             'description' => 'required'
         ]);

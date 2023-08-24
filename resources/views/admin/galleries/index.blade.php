@@ -4,7 +4,7 @@
    <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Manage Author</h1>
+                <h1>Manage gallery</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li><a href="#">Tables</a></li>
@@ -37,27 +37,34 @@
                             <thead style="background-color: #F8F8F8;">
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
-                                    <th width="20%">Title</th>
-                                    <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="20%">Gallery Image</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
-                            <tr>
+                            <!-- @foreach($galleries as $gallery) -->
+                              <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
-                                <td>Title</td>
-                                <td>Designation</td>
-                                <td>Image</td>
+                                <!-- <td>Title</td>
+                                <td>Designation</td> -->
+                                <td><img src="{{asset('uploads/').'/'.$gallery->image}}" alt="" height='100' weight='100'></td>
                                 <td>
+                                <!-- @if($gallery->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
+                                    @else
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>
+                                    @endif --> -->
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
-                                    <button class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                <a href="{{route('gallery.edit', $gallery->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <form action="{{route('gallery.destroy', $gallery->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                    </form>
                                 </td>
                             </tr>
+                            <!-- @endforeach -->
                         </table>
                     </div>
                     <!-- /.box-body -->

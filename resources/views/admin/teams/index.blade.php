@@ -37,27 +37,36 @@
                             <thead style="background-color: #F8F8F8;">
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
-                                    <th width="20%">Title</th>
+                                    <th width="20%">Full Name</th>
                                     <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="20%">Image</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
+                            @foreach($teams as $team)
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
-                                <td>Title</td>
-                                <td>Designation</td>
-                                <td>Image</td>
+                                <td>{{$team->fullname}}</td>
+                                <td>{{$team->designation}}</td>
+                                <td><img src="{{asset('uploads/').'/'.$team->team_img}}" alt="" height='100' weight='100'></td>
                                 <td>
+                                @if($team->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
+                                    @else
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <a href="{{route('team.edit', $team->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <form action="{{route('team.destroy', $team->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
                                     <button class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     <!-- /.box-body -->

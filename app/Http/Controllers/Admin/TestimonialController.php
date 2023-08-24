@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Testimonial;
 
 class TestimonialController extends Controller
 {
@@ -14,7 +15,9 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        return view('admin.testimonials.index');
+        $testimonials = Testimonial::latest()->paginate(15);
+        return view('admin.testimonials.index')
+            ->with(compact('testimonials'));  
     }
 
     /**
@@ -25,6 +28,40 @@ class TestimonialController extends Controller
     public function create()
     {
         return view('admin.testimonials.create');
+    }
+
+    public function store(Request $request)
+    {
+        
+        $this->validate(request(), [
+            'fullname' => 'required',
+            'designation' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
+            'description' => 'required',
+            'status' => 'required',
+            ]);
+
+            $fileName = null;
+            if (request()->hasFile('image')) 
+            {
+                $file = request()->file('image');
+                $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
+                $file->move('./uploads/', $fileName);
+            }
+
+        Testimonial::create([
+            'fullname' => request()->get('fullname'),
+            'designation' => request()->get('designation'), 
+            'status' => 1,
+            'description' => request()->get('description'),
+            'image' => $fileName,  
+            ]);
+            $notification = [
+                'message' => 'Record Inserted Successfully!',
+                'alert-type' => 'success',
+            ];
+
+            return redirect()->to('/admin/testimonials')->with($notification);
     }
 
     /**
@@ -53,7 +90,8 @@ class TestimonialController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.testimonial.edit');
+        $testimonial=Testimonial::find($id);   
+        return view('admin.testimonials.edit',compact('testimonial'));
     }
 
     /**
@@ -65,7 +103,35 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(), [
+            'fullname' => 'required',
+            'designation' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
+            'description' => 'required',
+            'status' => 'required',
+            ]);
+            $testimonial=Testimonial::find($id);
+            $fileName = null;
+            if (request()->hasFile('image')) 
+            {
+                $file = request()->file('image');
+                $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
+                $file->move('./uploads/', $fileName);
+            }
+
+        $testimonial->update([
+            'fullname' => request()->get('fullname'),
+            'designation' => request()->get('designation'),
+            'image' => $fileName,  
+            'description' => request()->get('description'), 
+            'status' => 1,    
+        ]);
+            $notification = [
+                'message' => 'Record Inserted Successfully!',
+                'alert-type' => 'success',
+            ];
+
+            return redirect()->to('/admin/testimonials')->with($notification);
     }
 
     /**
@@ -76,6 +142,9 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $testimonial=Testimonial::find($id);
+
+        $testimonial->delete();
+        return redirect()->to('/admin/testimonials');
     }
 }
