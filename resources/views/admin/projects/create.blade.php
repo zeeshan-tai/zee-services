@@ -29,6 +29,12 @@
                     </div>
 
                     <div class="form-group">
+                    <label for="slug">Slug <span class="text text-red">*</span></label>
+                      <input type="text" name="slug" class="form-control" id="slug" placeholder="Slug">
+                    </div>
+
+
+                    <div class="form-group">
                     <label for="project_category_id">Project Category Id <span class="text text-red">*</span></label>
                       <input type="text" name="project_category_id" class="form-control" id="project_category_id" placeholder="Project Category Id">
                     </div>
@@ -48,7 +54,7 @@
 
                     <div class="form-group">
                      <label>Description</label>
-                     <textarea name="description" id="description" class="form-control" rows="5" placeholder="Enter ..."></textarea>
+                     <textarea name="description" id="description" class="form-control" rows="5" placeholder="Description"></textarea>
                     </div>
                 </div>
             </div>

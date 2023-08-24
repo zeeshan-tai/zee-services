@@ -37,9 +37,8 @@
                             <thead style="background-color: #F8F8F8;">
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
-                                    <th width="20%">Title</th>
-                                    <th width="20%">Designation</th>
-                                    <th width="20%">Author Image</th>
+                                    <th width="20%">Name</th>
+                                    <th width="20%">Slug</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
@@ -65,6 +64,7 @@
                                     </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     <!-- /.box-body -->

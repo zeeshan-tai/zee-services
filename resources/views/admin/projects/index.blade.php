@@ -38,26 +38,37 @@
                                 <tr>
                                     <th width="4%"><input type="checkbox" name="" id="checkAll"></th>
                                     <th width="20%">Title</th>
+                                    <th width="20%">Description</th>
                                     <th width="20%">Project Category Id</th>
                                     <th width="20%">Image</th>
                                     <th width="10%">Status</th>
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
+                            @foreach($projects as $project)
                             <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
-                                <td>Title</td>
-                                <td>Project Category Id</td>
-                                <td>Image</td>
+                                <td>{{$project->title}}</td>
+                                <td>{{$project->description}}</td>
+                                <td>{{$project->project_category_id}}</td>
+                                <td><img src="{{asset('uploads/').'/'.$project->image}}" alt="" height='100' weight='100'></td>
                                 <td>
+                                     @if($project->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
+                                    @else
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <a href="{{route('project.edit', $project->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
+                                    <form action="{{route('project.destroy', $project->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
                                     <button class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     <!-- /.box-body -->

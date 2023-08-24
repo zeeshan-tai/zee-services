@@ -15,7 +15,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.projects.index');
+        $projects = Project::latest()->paginate(15);
+        return view('admin.projects.index')
+            ->with(compact('projects'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create');
+        return view('admin.projects.create');
     }
 
     /**
@@ -36,25 +38,34 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validation(request(),[
-        'title' => 'required',
-        'slug' => 'required',
-        'project_category_id' => 'required',
-        'status' => 'required',
+      $this->validate(request(),[
+        'title' => "required",
+        'slug' => "required",
+        'project_category_id' => "required",
+        'status' => "required",
         'image' => 'required|mimes:png,jpg, jpeg,gif|max:2048',
-        'description' => 'required'
+        'description' => "required"
       ]);
+
+      $fileName = null;
+      if (request()->hasFile('image'))
+      {
+          $file = request()->file('image');
+          $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
+          $file->move('./uploads/', $fileName);
+      }
+
 
       project::create([
         'title' => request()->get('title'),
         'slug' =>request()->get('slug'),
         'project_category_id' =>request()->get('project_category_id'),
         'status' => 1,
-        'image' => (''),
+        'image' => $fileName,
         'description'=>request()->get('description'),]);
 
 
-        return redirect()->to('/admin/projects');
+        return redirect()->to('/admin/project');
       }
 
     /**
@@ -65,7 +76,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        return view('admin.project.show');
+        return view('admin.projects.show');
     }
 
     /**
@@ -76,7 +87,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.project.edit');
+        $project=Project::find($id);
+        return view('admin.projects.edit',compact('project'));
     }
 
     /**
@@ -88,7 +100,34 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(),[
+            'title' => 'required',
+            'slug' => 'required',
+            'project_category_id' => 'required',
+            'status' => 'required',
+            'image' => 'required|mimes:png,jpg, jpeg,gif|max:2048',
+            'description' => 'required'
+          ]);
+          $project=Project::find($id);
+          $fileName = null;
+          if (request()->hasFile('image'))
+          {
+              $file = request()->file('image');
+              $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
+              $file->move('./uploads/', $fileName);
+          }
+    
+    
+          $project->update([
+            'title' => request()->get('title'),
+            'slug' =>request()->get('slug'),
+            'project_category_id' =>request()->get('project_category_id'),
+            'status' => 1,
+            'image' => $fileName,
+            'description'=>request()->get('description'),]);
+    
+    
+            return redirect()->to('/admin/project');
     }
 
     /**
@@ -99,7 +138,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project=Project::find($id);
+
+        $project->delete();
+        return redirect()->to('/admin/project');
     }
 }
 

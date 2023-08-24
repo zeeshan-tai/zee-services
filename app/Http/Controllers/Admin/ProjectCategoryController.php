@@ -15,7 +15,7 @@ class ProjectCategoryController extends Controller
      */
     public function index()
     {
-        $project_catetories = ProjectCategory::latest()->paginate(15);
+        $project_categories = ProjectCategory::latest()->paginate(15);
         return view('admin.project_categories.index')
             ->with(compact('project_categories'));  
     }

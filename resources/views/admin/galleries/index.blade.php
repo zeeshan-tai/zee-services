@@ -42,18 +42,18 @@
                                     <th width="10%">Manage</th>
                                 </tr>
                             </thead>
-                            <!-- @foreach($galleries as $gallery) -->
+                            @foreach($galleries as $gallery)
                               <tr>
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
                                 <!-- <td>Title</td>
                                 <td>Designation</td> -->
                                 <td><img src="{{asset('uploads/').'/'.$gallery->image}}" alt="" height='100' weight='100'></td>
                                 <td>
-                                <!-- @if($gallery->status==0)
+                                 @if($gallery->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>
                                     @else
                                     <button class="btn btn-info btn-sm"><i class="fa fa-thumbs-up"></i></button>
-                                    @endif --> -->
+                                    @endif 
                                 </td>
                                 <td>
                                 <a href="{{route('gallery.edit', $gallery->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
