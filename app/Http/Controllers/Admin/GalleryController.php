@@ -49,7 +49,7 @@ class GalleryController extends Controller
         }
         Gallery::create([
             'image' => $fileName,
-            // 'status' => 1,
+            'status' => 1,
         ]);
         return redirect()->to('/admin/gallery');
       }
@@ -100,7 +100,7 @@ class GalleryController extends Controller
         }
         
         $gallery->update([ 
-        'status' => 1,
+        // 'status' => 1,
         'image' => $fileName,
         ]);
    
