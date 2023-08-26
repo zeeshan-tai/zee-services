@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="bg-light p-4">
-                        <p class="text-primary fw-medium mb-2">{{project_category_id}}</p>
+                        <p class="text-primary fw-medium mb-2">{{$project->project_category_id}}</p>
                         <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
                     </div>
                 </div>
