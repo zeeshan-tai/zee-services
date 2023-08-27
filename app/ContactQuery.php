@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContactQueries extends Model
+class ContactQuery extends Model
 {
-    
+    protected $guarded = [];
 }

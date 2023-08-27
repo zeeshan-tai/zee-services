@@ -25,4 +25,6 @@ Route::get('/project', 'Front\ProjectController@index')->name('project');
 Route::get('/testimonials','Front\TestimonialController@index')->name('testimonials');
 Route::get('/team','Front\TeamController@index')->name('team');
 Route::get('/contact', 'Front\ContactController@index')->name('contact');
+Route::post('/newsletter', 'Front\NewsletterController@store')->name('newsletter');
+Route::post('/contact', 'Front\contactController@store')->name('contact');
 

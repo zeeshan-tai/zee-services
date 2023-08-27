@@ -36,7 +36,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function staore(Request $request)
     {
       $this->validate(request(),[
         'title' => "required",
@@ -56,7 +56,7 @@ class ProjectController extends Controller
       }
 
 
-      project::create([
+      Project::create([
         'title' => request()->get('title'),
         'slug' =>request()->get('slug'),
         'project_category_id' =>request()->get('project_category_id'),
