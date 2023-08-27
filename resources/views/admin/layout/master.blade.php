@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Home | American Books</title>
+  <title>Home | Zee Services</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{asset('assets/admin/bootstrap/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -26,13 +26,13 @@
     @include('admin.partials.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
-    
+
     @yield('main-content')
       <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   @include('admin.partials.footer')
- 
+
 <!-- ./wrapper -->
 
 <script src="{{asset('assets/admin/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>

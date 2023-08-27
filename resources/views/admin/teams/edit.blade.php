@@ -46,7 +46,7 @@
                   <div class="col-xs-6">
                     <div class="form-group">
                       <label for="image">Image <span class="text text-red">*</span></label>
-                      <input type="file" name="image" class="form-control" id="Image" value="{{$team->team_img}}">
+                      <input type="file" name="team_img" class="form-control" id="Image" value="{{$team->team_img}}">
                     </div>
 
                     <div class="form-group">
@@ -69,7 +69,7 @@
                       <input type="linkedin_id" name="linkedin_id" class="form-control" id="linkedin_id" placeholder="linkedin_id" value="{{$team->linkedin_id}}">
                   </div>
 
-                    
+
                   </div>
             </div>
 

@@ -62,7 +62,10 @@ class ProjectController extends Controller
         'project_category_id' =>request()->get('project_category_id'),
         'status' => 1,
         'image' => $fileName,
-        'description'=>request()->get('description'),]);
+        'description'=>request()->get('description'),
+        'github_link'=>request()->get('github_link'),
+    ]);
+
 
 
         return redirect()->to('/admin/project');
@@ -106,7 +109,8 @@ class ProjectController extends Controller
             'project_category_id' => 'required',
             'status' => 'required',
             'image' => 'required|mimes:png,jpg, jpeg,gif|max:2048',
-            'description' => 'required'
+            'description' => 'required',
+            'github_link'=>'required',
           ]);
           $project=Project::find($id);
           $fileName = null;
@@ -116,17 +120,19 @@ class ProjectController extends Controller
               $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
               $file->move('./uploads/', $fileName);
           }
-    
-    
+
+
           $project->update([
             'title' => request()->get('title'),
             'slug' =>request()->get('slug'),
             'project_category_id' =>request()->get('project_category_id'),
             'status' => 1,
             'image' => $fileName,
-            'description'=>request()->get('description'),]);
-    
-    
+            'description'=>request()->get('description'),
+            'github_link'=>request()->get('github_link'),
+
+        ]);
+
             return redirect()->to('/admin/project');
     }
 

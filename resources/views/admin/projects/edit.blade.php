@@ -59,6 +59,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Github Link</label>
+                        <input type="text" name="github_link" class="form-control" id="github_link" placeholder="Github Link" value="{{$project->github_link}}">
+                    </div>
+
+                    <div class="form-group">
                     <label>Description</label>
                     <textarea name="description" id="description" class="form-control" rows="5" placeholder="Description" >{{$project->description}}</textarea>
                     </div>
@@ -71,8 +76,8 @@
             <button type="submit" class="btn btn-primary">Update</button>
             <button type="reset" class="btn btn-danger">Cancel</button>
           </div>
+        </form>
       </div>
-      </form>
       <!-- /.box -->
       <!-- form end -->
     </section>

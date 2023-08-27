@@ -49,7 +49,7 @@
                                 <td><input type="checkbox" name="" id="" class="checkSingle"></td>
                                 <td>{{$team->fullname}}</td>
                                 <td>{{$team->designation}}</td>
-                                <td><img src="{{asset('uploads/').'/'.$team->team_img}}" alt="" height='100' weight='100'></td>
+                                <td><img src="{{asset('uploads/').'/'.$team->team_image}}" alt="" height='100' weight='100'></td>
                                 <td>
                                 @if($team->status==0)
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i></button>

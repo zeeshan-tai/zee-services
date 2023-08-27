@@ -17,7 +17,7 @@ class TeamController extends Controller
     {
         $teams = Team::latest()->paginate(15);
         return view('admin.teams.index')
-            ->with(compact('teams')); 
+            ->with(compact('teams'));
     }
 
     /**
@@ -50,7 +50,7 @@ class TeamController extends Controller
         ]);
 
         $fileName = null;
-        if (request()->hasFile('team_img')) 
+        if (request()->hasFile('team_img'))
         {
             $file = request()->file('team_img');
             $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
@@ -59,9 +59,9 @@ class TeamController extends Controller
 
         Team::create([
             'fullname' => request()->get('fullname'),
-            'designation' => request()->get('designation'), 
+            'designation' => request()->get('designation'),
             'status' => 1,
-            'team_img' => $fileName,
+            'team_image' => $fileName,
             'facebook_id' => request()->get('facebook_id'),
             'twitter_id' => request()->get('twitter_id'),
             'instagram_id' => request()->get('instagram_id'),
@@ -93,7 +93,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        $team=Team::find($id);   
+        $team=Team::find($id);
         return view('admin.teams.edit',compact('team'));
     }
 
@@ -109,7 +109,7 @@ class TeamController extends Controller
         $this->validate(request(),[
             'fullname' => 'required',
             'designation' => 'required',
-            'team_img' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
+            // 'team_img' => 'required|mimes:png,jpg,jpeg,gif|max:2048',
             'facebook_id' => 'required',
             'twitter_id' => 'required',
             'instagram_id' => 'required',
@@ -117,7 +117,7 @@ class TeamController extends Controller
         ]);
         $team=Team::find($id);
         $fileName = null;
-        if (request()->hasFile('team_img')) 
+        if (request()->hasFile('team_img'))
         {
             $file = request()->file('team_img');
             $fileName = md5($file->getClientOriginalName()) . time() . "." . $file->getClientOriginalExtension();
@@ -126,9 +126,9 @@ class TeamController extends Controller
 
         $team->update([
             'fullname' => request()->get('fullname'),
-            'designation' => request()->get('designation'), 
+            'designation' => request()->get('designation'),
             'status' => 1,
-            'team_img' => $fileName,
+            'team_image' => $fileName,
             'facebook_id' => request()->get('facebook_id'),
             'twitter_id' => request()->get('twitter_id'),
             'instagram_id' => request()->get('instagram_id'),
