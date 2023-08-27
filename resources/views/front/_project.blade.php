@@ -13,25 +13,24 @@
                 </ul>
             </div>
         </div>
-        @foreach ($projects as $project)
         <div class="row g-4 portfolio-container">
-            <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+        @foreach ($projects as $project)
+             <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                 <div class="rounded overflow-hidden">
                     <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="{{asset('front/img/portfolio-1.jpg')}}" alt="">
+                        <img class="img-fluid w-100" src="{{asset('uploads/').'/'.$project->image}}" alt="" height="500" width="400">
                         <div class="portfolio-overlay">
-                            <a class="btn btn-square btn-outline-light mx-1" href="{{asset('front/img/portfolio-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                            <a class="btn btn-square btn-outline-light mx-1" href="{{$project->github_link }}"><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="bg-light p-4">
                         <p class="text-primary fw-medium mb-2">{{$project->project_category_id}}</p>
-                        <h5 class="lh-base mb-0">Digital Agency Website Design And Development</a>
+                        <h5 class="lh-base mb-0">{{ $project->title }}</a>
                     </div>
                 </div>
             </div>
-        </div>
         @endforeach
+    </div>
     </div>
 </div>
 
