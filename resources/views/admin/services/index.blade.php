@@ -61,11 +61,11 @@
                                 </td>
                                 <td>
                                     <a href="{{route('service.edit', $service->id)}}" class="btn btn-info btn-flat btn-sm"> <i class="fa fa-edit"></i></a>
-                                    <form action="{{route('service.destroy', $service->id)}}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
-                                    </form>
+                                        <form action="{{route('service.destroy', $service->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-flat btn-sm"> <i class="fa fa-trash-o"></i></button>
+                                        </form>
                                 </td>
                             </tr>
                             @endforeach
